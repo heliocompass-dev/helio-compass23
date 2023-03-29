@@ -1,0 +1,164 @@
+@use '../styles/global/' as g;
+
+.main{
+    background: #F6F8F7;
+}
+
+.intro{
+    display: flex;
+    align-items: flex-end;
+    position: sticky;
+    top: -7rem;
+    width: 100%;
+    height: 10rem;
+    padding: 0 12vw;
+    background: inherit;
+    z-index: 3;
+
+    @include g.md{
+        display: none;
+    }
+
+    .captionBtns{
+        display: flex;
+
+        p{
+            position: relative;
+            font-size: 0.9rem;
+            bottom: 5px;
+
+            &::before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: g.$black;
+                opacity: 0.5;
+                position: absolute;
+                left: 50%;
+                bottom: -6px;
+                translate: -50% 0;
+            }
+        }
+
+        button{
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 4px;
+
+            &:disabled{
+                color: g.$black;
+            }
+
+            &:disabled::before{
+                content: '';
+                display: block;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: g.$black;
+                opacity: 0.8;
+                position: absolute;
+                left: 50%;
+                bottom: -9px;
+                translate: -50% 0;
+            }
+        }
+    }
+
+}
+
+.circleContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0 10vw 80px;
+
+    @include g.sm{
+        margin-top: 2rem;
+    }
+}
+
+.circle{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+
+
+}
+
+.caption{
+    position: absolute;
+    top: 12em;
+    width: 250px;
+    padding: 1rem;
+    background: #fafafa;
+    font-size: 0.9rem;
+    border: 1px solid #1d1d1d;
+    z-index: 2;
+    opacity: 0;
+    transition: .3s ease-in;
+    pointer-events: none;
+
+    &::before{
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: #1d1d1d;
+        position: absolute;
+        top: 0rem;
+        left: 50%;
+        translate: 0 -50%;
+    }
+}
+
+.circle:hover .caption, .circleWide:hover .caption, .circleTall:hover .caption{
+    opacity: 1;
+}
+
+
+
+.bottomContent{
+    display: flex;
+    width: 100%;
+
+    & > div{
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    @include g.md{
+        flex-direction: column;
+    }
+    @include g.sm{
+        scale: 0.8;
+    }
+}
+
+.circleWide{
+    width: 50%;
+    @include g.sm{
+        width: 100%;
+    }
+}
+.circleTall{
+    width: 25%;
+    align-items: flex-start;
+    position: relative;
+
+    @include g.sm{
+        width: 50%;
+    }
+
+}
+
+
+
+

@@ -1,0 +1,14 @@
+@use '../../styles/global/' as g;
+
+.container {
+  position: relative;
+  width: 80vw;
+  height: 80vw;
+
+  @include g.sm {
+    width: 150vw;
+    height: 150vw;
+    transform: translate(-50%);
+  }
+  
+}

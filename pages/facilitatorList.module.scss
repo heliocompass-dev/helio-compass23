@@ -1,0 +1,54 @@
+@use '../styles/global/' as g;
+
+.container{
+    min-height: 100vh;
+}
+
+.content{
+    padding: 0 12.5vw;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+    @media (max-width: '400px') {
+        margin-top: 3rem;
+        padding: 0 5vw;
+        justify-content: space-evenly;
+    }
+}
+
+.box{
+    width: clamp(15%, 200px, 30%);
+    min-width: 180px;
+    margin-bottom: 3rem;
+
+    @media (max-width: '400px') {
+        margin-bottom: 2rem;
+    }
+    
+
+    h3{
+        margin-top: 0.25rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        font-family: g.$noto-sans;
+        font-weight: g.$regular;
+        @media (max-width: '550px') {
+            margin-bottom: 0.5rem;
+        }
+    }
+    p{
+        font-size: 0.9rem;
+        letter-spacing: -1px;
+
+        &:nth-child(3){
+            font-weight: g.$light;
+            opacity: 0.5;
+        }
+    }
+    img{
+        margin-top: 0.5rem;
+    }
+}

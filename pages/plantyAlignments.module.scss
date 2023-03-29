@@ -1,0 +1,132 @@
+@use '../styles/global/' as g;
+
+.intro{
+    margin: 5rem 10vw 1rem;
+}
+
+
+.halfYearBtns{
+    button{
+        width: 18rem;
+        height: 3rem;
+        background: #f0f0f0;
+        font-size: 0.9rem;
+        text-transform: capitalize;
+        margin-right: 1rem;
+        cursor: pointer;
+        position: relative;
+        opacity: 0.7;
+        border: 1px solid #ccc;
+        color: #555;
+
+        &:disabled{
+            opacity: 1;
+            border: 1px solid #1d1d1d;
+            color: #1d1d1d;
+            cursor: auto;
+        }
+
+        &:before{
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: #999;
+        }
+
+        &:nth-child(1):before{
+            content: '2023/3/22 - 2023/9/19';
+        }
+        &:nth-child(2):before{
+            content: '2023/9/26 - 2024/3/17';
+        }
+
+        &:nth-child(2){
+            @include g.sm{
+                margin-top: 2rem;
+            }
+        }
+
+    }
+}
+
+.months{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .monthsCaption{
+        font-size: 0.8rem;
+        opacity: 0.6;
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.5px;
+    }
+
+    .monthsBtn{
+        display: flex;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+
+        button{
+            font-size: 1rem;
+            margin-right: 1rem;
+            padding: 0.15rem 0.75rem;
+            border: 1px solid #1d1d1d;
+            border-radius: 5px;
+            color: g.$black;
+
+            @include g.sm{
+                margin-top: 1rem;  
+            }
+        }
+        p{
+            @include g.sm{
+                margin-top: auto;
+            }
+        }
+    }
+
+    .monthsData{
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            width: fit-content;
+            margin-right: 3rem;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+.content{
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 10vw 5rem;
+
+    @include g.sm{
+        margin-top: -1rem;
+    }
+
+}
+
+.imgContainer{
+    margin-top: 2rem;
+    width: calc(80vw / 3 - 2rem);
+    min-height: 10rem;
+    position: relative;
+
+    @include g.md{
+        width: calc(50% - 2rem);
+    }
+
+
+    @include g.sm{
+        width: 100%;
+        margin-top: 1rem;
+    }
+   
+
+}

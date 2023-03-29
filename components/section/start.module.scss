@@ -1,0 +1,140 @@
+@use '../../styles/global/' as g;
+
+.container{
+    width: 80vw;
+    margin: -10rem auto 0 auto;
+    padding: 3rem 1rem 5rem;
+    background: url('../../public/home/start-bg.jpg');
+    background-size: cover;
+    color: g.$white;
+    box-shadow: 3px 5px 15px -6px rgba(g.$black, 1),
+    -3px -3px 8px -6px rgba(g.$white, 0.2);
+
+    @include g.md{
+        width: 85vw;
+        padding: 2rem 2rem 3rem;
+    }
+    @include g.sm{
+        margin-top: -4rem;
+        width: 90vw;
+    }
+}
+
+.title{
+    text-align: center;
+
+    h2{
+        font-size: 2.75rem;
+        font-weight: g.$medium;
+        line-height: 1.1;
+        .smText{
+            font-size: 1.3rem;
+        }
+        .xsText{
+            font-size: 1.25rem;
+        }
+    }
+
+    .line{
+        display: block;
+        width: 3rem;
+        height: 0.5px;
+        background: #fff;
+        margin: 1rem auto ;
+    }
+
+    p{
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+}
+
+.content{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    position: relative;
+
+    @include g.md{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &::before{ //中央の縦線
+        content: '';
+        display: block;
+        width: 0.5px;
+        height: 70%;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        @include g.md{
+            width: 90%;
+            height: 1px;
+            left: 5%;
+            top: 50%;
+        }
+        @include g.sm{ 
+          display: none;
+
+        }
+        @include g.xs{
+            top: 50%;
+        }
+    }
+}
+
+.contentItem{
+    h3{
+        font-size: 1.5rem;
+        font-weight: g.$regular;
+    }
+    .line{
+        display: block;
+        width: 3rem;
+        height: 0.5px;
+        background: #fff;
+        margin: 0.75rem auto;
+    }
+    p{
+      
+        font-size: 0.85rem;
+        line-height: 1.7;
+        opacity: 0.8;
+    }
+    .contentImgs{
+        display: flex;
+        gap: 0.75rem;
+        margin: 0.75rem 0;
+
+        @include g.md{
+            justify-content: space-between;
+            width: calc(140px * 3 + 2rem);
+            margin: 0.75rem auto;
+        }
+
+        @include g.sm{
+            gap: 0.25rem;
+            width: calc(140px * 2 + 0.5rem);
+            img:nth-child(2){
+                display: none;
+            }
+        }
+    }
+
+    .linkBtn{
+        display: flex;
+        justify-content: center;
+    }
+
+    &:nth-child(2){ //使い方をしる
+        @include g.md{
+            margin-top: 6rem;
+        }
+    }
+}
+

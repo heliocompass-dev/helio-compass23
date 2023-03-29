@@ -1,0 +1,85 @@
+@use './global/' as g;
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300;400;500;600;700&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+  color: g.$black;
+  background-color: g.$white;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: g.$noto-serif;
+}
+
+ul > li {
+  list-style: none;
+}
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:disabled{
+    cursor: auto;
+  }
+}
+
+.only-sm{
+  display: none;
+  @include g.sm{
+      display: block;
+  }
+}
+
+.only-md{
+  display: none;
+  @include g.md{
+      display: block;
+  }
+}
+
+.only-lg{
+  @include g.md{
+      display: none;
+  }
+}
+
+.not-sm{
+  @include g.sm{
+      display: none;
+  }
+}
+
+.not-md{
+  @include g.md{
+      display: none;
+  }
+  @include g.sm{
+      display: block;
+  }
+}
+
+.not-lg{
+  display: none;
+  @include g.md{
+      display: block;
+  }
+}
+
+

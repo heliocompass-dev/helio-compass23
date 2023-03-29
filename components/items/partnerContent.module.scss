@@ -1,0 +1,29 @@
+.box{
+    width: 100%;
+    font-family: var(--noto-serif);
+    text-align: center;
+    
+    padding: 50px 0;
+
+    h3{
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.5px;
+    }
+
+    .address{
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 5px 0;
+    }
+
+    a{
+        font-size: 13px;
+        margin: 0;
+
+        &:hover{
+            color: var(--main-yellow);
+        }
+    }
+}

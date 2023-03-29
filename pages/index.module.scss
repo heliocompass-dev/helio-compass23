@@ -1,0 +1,95 @@
+    @use '../styles/global/' as g;
+
+.container{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.snsContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 10vw 4rem;
+
+        
+        @include g.lg{
+            & > div{
+                width: clamp(300px, 31%, 600px);
+            }
+        }
+        
+
+    @include g.md{
+        flex-wrap: wrap;
+        width: 80vw;
+    }
+    
+    @include g.sm{
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+}
+
+.snsTitle{
+    font-family: g.$noto-sans;
+    margin-left: 3px;
+}
+
+.noteContainer{
+    
+    ul{
+        margin-top: 0;
+        //インスタOKでコメントアウト
+        // display: flex;
+        // flex-direction: column; 
+
+        //インスタOK後はgrid系を削除
+        display: grid;
+        grid-template-columns: repeat(2, 320px);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 1rem 2rem;
+
+        @include g.md{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+           
+        }
+        @include g.sm{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    li{
+
+        @include g.md{
+            margin-bottom: 0;
+            width: calc(50% - 0.5rem);
+        }
+        @include g.sm{
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+    }
+    article{
+        display: flex;
+        flex-direction: column;
+        img{
+            //インスタOK後
+            // width: 100%;
+            // min-width: 300px;
+            // height: 240px;
+            // aspect-ratio: 3 / 2 ;
+            object-fit: cover;
+        }
+    }
+}
+
+.twitterContainer, .instagramContainer{
+    @include g.md{
+        width: calc(50% - 0.5rem);
+        margin-top: 2rem;
+    }
+    @include g.sm{
+        width: 100%;
+    }
+}

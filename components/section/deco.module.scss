@@ -1,0 +1,120 @@
+@use '../../styles/global/' as g;
+
+$gap: 0rem;
+
+.container{
+    display: flex;
+    width: 100%;
+    padding-right: 10vw;
+    margin-top: 8rem;
+
+    @include g.sm{
+        padding: 0;
+        margin-top: 4rem;
+    }
+}
+
+.lcTopContainer, .lcBottomContainer, .rightContainer{  
+    div{
+        position: relative;
+        img{
+            object-fit: cover;
+        }
+    }
+}
+
+.leftCenterContainer{
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    width: 70%;
+    @include g.sm{
+        width: 100%;
+    }
+
+    .lcTopContainer, .lcBottomContainer{
+        display: flex;
+        justify-content: space-between;
+
+        .topLeft{
+            width: 270px;
+            height: 270px;
+            margin-left: 1.5rem;
+
+            @include g.sm{
+             display: none;
+            }
+        }
+        .topCenter{
+            flex: 1;
+            height: 270px;
+            
+            @include g.sm{
+                
+            }
+        }
+
+        .bottomLeft{
+            flex: 1;
+            height: 310px;
+            margin-right: $gap;
+
+            @include g.sm{
+                margin-right: 0;
+            }
+        }
+        .bottomCenter{
+            width: 260px;
+            height: 260px;
+            align-self: flex-end;
+            @include g.sm{
+                flex: 1;
+            }
+        }
+       
+    }
+}
+
+.lcBottomContainer{
+    @include g.sm{
+        padding: 0 1rem;
+    }
+}
+
+.rightContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: $gap;
+    width: calc(30% - $gap);
+
+    @include g.sm{
+        display: none;
+    }
+
+    .topRight{
+        width: 255px;
+        height: 390px;
+    }
+
+    .bottomRight{
+        height: calc((270px + 310px) - 390px);
+        width: 100%;
+    }
+
+}
+
+.leftCenterContainer, .rightContainer{
+
+    img{
+        transition: .5s ease;
+    }
+
+        img:hover{
+            border-radius: 5px;
+            filter: brightness(120%);
+            box-shadow: 0px 4px 8px -2px rgba(#011a17, 0.2);
+        }
+    
+}

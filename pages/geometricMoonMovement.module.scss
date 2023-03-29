@@ -1,0 +1,152 @@
+@use '../styles/global/' as g;
+
+.container{
+    color: #fff;
+    width: 100%;
+
+}
+
+.intro{
+    text-align: center;
+    @include g.sm{
+        margin-top: 3rem;
+    }
+
+    .introTitle{
+        font-weight: g.$medium;
+        h3{
+            font-size: 4rem;
+            @include g.sm{
+                font-size: 3.5rem;
+            }
+        }
+        p{
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-family: g.$noto-serif;
+            letter-spacing: 1.5px;
+
+            @include g.sm{
+                font-size: 1.1rem;
+                 white-space: pre-wrap;
+            }
+
+            @include g.xs{
+                font-size: 1rem     ;
+            }
+        }
+    }
+
+    .introDate{
+        .year{
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            font-weight: g.$light;
+            letter-spacing: 1px;
+        }
+        .date{
+            font-weight: g.$light;
+            margin-top: 0.25rem;
+
+            span{
+                font-size: 1.75rem;
+                margin: 0 5px;
+            }
+
+            img{
+                margin: 0 1px 0 10px;
+            }
+        }
+    }
+}
+
+.monthList{
+    display: flex;
+    flex-wrap: wrap;
+    width: clamp(55rem, 80%, 60rem);
+    justify-content: space-between;
+    margin: 2rem auto 0.5rem;
+    position:sticky;
+    top: 5rem;
+    z-index: 2;
+
+    @include g.md{
+        max-width: 85%;
+        margin-bottom: 0;
+        justify-content: flex-start;
+    }
+
+    @include g.sm{
+        margin-top: 3.5rem;
+        position: static;
+    }
+
+    button{
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.1rem;
+        position: relative;
+        cursor: pointer;
+
+        @include g.md{
+            margin: 1rem 1.5rem 0.75rem;
+
+            &:last-child{
+                margin-right: auto;
+            }
+        }
+
+      
+
+        &::before{
+            content: '';
+            display: block;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            background: g.$accentColor;
+            position: absolute;
+            top: -0.5rem;
+            left: 50%;
+            translate: -50% 0;
+            opacity: 0;
+
+        }
+    }
+
+    button:disabled{
+        cursor: auto;
+        &::before{
+            opacity: 1;
+        }
+    }
+}
+
+.content{
+  
+    .contentImg{
+    width: 100%;
+      min-height: 1500px;
+      @include g.sm{
+        min-height: 350px;
+      }
+      @include g.xs{
+        min-height: 300px;
+      }
+      
+
+      img{
+        object-fit: cover;
+        @include g.sm{
+            object-fit: cover;
+        }
+      }
+    }
+
+    .message{
+        padding: 7rem 0;
+        white-space: break-spaces;
+        text-align: center;
+    }
+}

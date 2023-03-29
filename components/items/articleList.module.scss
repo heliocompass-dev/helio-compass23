@@ -1,0 +1,132 @@
+@use '../../styles/global/' as g;
+
+.contentTitle,.contentItem{
+    display: flex;
+    font-size: 0.95rem;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        
+    }
+    span{
+        display: inline-block;
+        width: clamp(150px, 20%, 300px);
+        margin-right: 1.5rem;
+    }
+}
+
+.contentTitle{
+    margin-top: 1rem;
+    opacity: 0.5;
+    font-weight: g.$light; 
+    
+    div,span{
+        font-size: 0.9rem;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(g.$black, 0.7);
+    }
+
+    @include g.md{
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div{
+        @include g.md{ 
+            min-width: 50%;
+            margin-top: 0.25rem;
+            display: flex;
+            flex-direction: column;
+
+            p:nth-child(2){
+                  margin-top: 0.75rem;
+            }
+        }
+
+        @include g.sm{
+            min-width: none;
+        }
+    }
+
+    span{
+        @include g.md{
+            min-width: 50%;
+            border-bottom: none;
+            &:nth-child(2){ //開催日
+                margin-top: 0.5rem;
+                }
+        }
+
+    }
+}
+
+.contentItem{
+    position: relative;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid rgba(g.$black, 0.3);
+
+    @include g.md{
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    
+    div{
+        font-size: 0.9rem;
+
+        @include g.md{ 
+            min-width: 50%;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+
+          
+            p:nth-child(1){
+                @include g.sm{
+
+                    width: 50%;
+                }
+            }
+            p:nth-child(2){ //開催場所
+                  margin-top: 1rem;
+            }
+        }
+    }
+
+    span{
+        font-size: 0.9rem;
+
+        @include g.md{
+            min-width: 50%;
+            border-bottom: none;
+
+            &:nth-child(2){ //開催日
+                margin-top: 1rem;
+              }
+        }
+
+        
+    }
+    .mainVisualContainer{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 82%;
+        
+        img{
+            object-fit: contain;
+        }
+
+        @include g.sm{
+            width: 40%;
+            height: 50%;
+            width: fit-content;
+        }
+    }
+}
+

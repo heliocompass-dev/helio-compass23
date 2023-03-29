@@ -1,0 +1,53 @@
+@use '../styles/global/' as g;
+ 
+.content{
+    background: #f3f3f3;
+    margin-top: 100px;
+    padding: 50px 10% 70px 10%; 
+}
+
+.desc{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.partners{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.box{
+   width: 50%;
+   position: relative;
+
+   @include g.md{
+       width: 100%;
+   }
+}
+
+.box::after{
+   content: '';
+   display: block;
+   position: absolute;
+   width: 8px;
+   height: 8px;
+   background: #FAAF06;
+   border-radius: 50%;
+   left: 50%;
+}
+.box:nth-child(39){
+
+   &::after{
+   display: none;
+
+   @include g.md{
+       display: block;
+   }
+   }
+}
+
+.box:nth-child(40){
+   &::after{
+       display: none;
+   }
+}

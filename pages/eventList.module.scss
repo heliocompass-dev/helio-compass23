@@ -1,0 +1,39 @@
+@use '../styles/global/' as g;
+
+.container{
+    min-height: 100vh;
+}
+
+.content{
+    display: flex;
+    padding: 0 10vw 5rem;
+    margin-top: 5rem;
+}
+
+.eyecatch img{
+    @include g.md{
+        display: none;
+    }
+}
+
+.articleList{
+    margin-left: 5rem;
+    width: 100%;
+
+    @include g.md{
+        margin-left: 0;
+    }
+}
+
+.pagination{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    li:first-child{
+        background: #9e9c9c;
+        a{
+            color: #fff;
+        }
+    }
+}

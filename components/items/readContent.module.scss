@@ -1,0 +1,50 @@
+@use '../../styles/global/' as g;
+
+.container{
+    width: calc(50% - 20px);
+    display: flex;
+    margin-bottom: 30px;
+
+    @include g.md{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    @include g.sm{
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+}
+
+.img{
+    position: relative;
+    min-height: 200px;
+
+    @include g.sm{
+        width: 100%;
+        min-height: 270px;
+    }
+}
+
+.img, .text{
+    width: 50%;
+    @include g.sm{
+        width: 100%;
+    }
+}
+
+.text{
+    padding-left: 10px;
+    h3{
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: g.$noto-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    p{
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line; //props内の改行
+    }
+}

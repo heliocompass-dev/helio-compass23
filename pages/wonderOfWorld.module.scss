@@ -1,0 +1,192 @@
+@use '../styles/global/' as g;
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 100px;
+
+  position: relative;
+
+  background-image: url("../public/wow/wow-hero-bg.png");
+  background-size: cover;
+  background-position: center left;
+
+  color: #f9f9f9;
+
+  &::before {
+    content: "wonder of worlds";
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    left: 12vw;
+    top: -35px;
+
+    @include g.sm {
+      display: none;
+    }
+  }
+
+  @include g.sm {
+    background-image: url("../public/wow/wow-hero-bg-sm.png");
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+.sun,
+.planet {
+  position: absolute;
+}
+.planet {
+  transform: translate(-50%, -50%);
+  width: fit-content;
+}
+
+.sun {
+  width: 32vw;
+  height: 32vw;
+  background: #f9f9f9;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -16vw;
+  transform: translateY(-50%);
+
+  @include g.sm {
+    width: 40vw;
+    height: 40vw;
+    top: 10vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.planet0 {
+  top: 30%;
+  left: 18%;
+
+  @include g.md {
+      top: 36%;
+    left: 15%;
+  }
+  @include g.sm {
+    top: 0;
+    left: 15%;
+  }
+}
+.planet1 {
+  top: 60%;
+  left: 23%;
+  @include g.sm {
+    top: 20%;
+    left: 28%;
+  }
+}
+.planet2 {
+  top: 5%;
+  left: 26%;
+  @include g.md {
+    top: 15%;
+  }
+  @include g.sm {
+    top: 28%;
+    left: 75%;
+  }
+}
+.planet3 {
+  top: 50%;
+  left: 34%;
+  @include g.md {
+    left: 40%;
+  }
+  @include g.sm {
+    top: 34%;
+    left: 34%;
+  }
+}
+.planet10 {
+  top: 60%;
+  left: 38%;
+  @include g.md {
+    left: 44%;
+  }
+  @include g.sm {
+    top: 40%;
+    left: 38%;
+  }
+}
+.planet4 {
+  top: 30%;
+  left: 37%;
+  @include g.md {
+    top: 35%;
+    left: 45%;
+  }
+  @include g.sm {
+    top: 42%;
+    left: 65%;
+  }
+}
+.planet5 {
+  top: 40%;
+  left: 47%;
+  @include g.md {
+    top: 20%;
+    left: 52%;
+  }
+  @include g.sm {
+    top: 53%;
+    left: 20%;
+  }
+}
+.planet6 {
+  top: 65%;
+  left: 57%;
+  @include g.sm {
+    top: 60%;
+    left: 72%;
+  }
+}
+.planet7 {
+  top: 28%;
+  left: 65%;
+  @include g.sm {
+    top: 69%;
+    left: 43%;
+  }
+}
+.planet8 {
+  top: 10%;
+  left: 72%;
+  @include g.sm {
+    top: 79%;
+    left: 23%;
+  }
+}
+.planet9 {
+  top: 57%;
+  left: 80%;
+  @include g.sm {
+    top: 89%;
+    left: 70%;
+  }
+}
+
+/////////////////
+
+.content {
+  padding: 100px 10% 100px 10%;
+  background: #1d1d1d;
+  color: #f9f9f9;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px 10px;
+
+  @include g.md {
+    justify-content: space-between;
+  }
+  @include g.sm {
+    flex-direction: column;
+  }
+}

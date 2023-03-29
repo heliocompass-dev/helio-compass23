@@ -1,0 +1,60 @@
+@use '../../styles/global/' as g;
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    h2{
+        font-size: 20px;
+        font-family: g.$noto-serif;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .number{
+        font-size: 30px;
+        margin-right: 7px;
+    }
+
+    .titleEn{
+        font-family: g.$noto-sans;
+        font-size: 14px;
+        margin-left: 7px;
+    }
+}
+
+.img{
+    width: 100%;
+    height: 630px;
+    position: relative;
+
+
+    @include g.md{
+        height: 500px;
+    }
+}
+
+.imgContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    @include g.md{
+        flex-direction: column;
+    }
+
+    & > div{
+        position: relative;
+    }
+}
+
+.disc{
+    p {
+        font-size: 14px;
+    }
+}

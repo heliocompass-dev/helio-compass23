@@ -1,0 +1,70 @@
+@use '../styles/global/' as g;
+
+.inner{
+    margin-top: 40vh;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    @include g.md{
+        margin-top: 20vh;
+        transform: scale(1.1);
+        height: 50vh;
+    }
+
+    @include g.sm{
+        margin-top: 20vh;
+        transform: scale(1.6) translateX(-23%);
+        height: 100vh;
+    }
+}
+
+.human{
+    margin-top: 25vh;
+    margin-bottom: 70px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 3%;
+
+    @include g.md{
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+.humanImg{
+    position: relative;
+    width: 60%;
+    height: 70vh;
+
+    @include g.md{
+        margin-top: 100px;
+        width: 80%;
+        height: 60vh;
+    }
+
+    @include g.sm{
+        margin-top: 0;
+        height: 50vh;
+    }
+}
+
+.humanText{
+    width: 28%;
+
+    @include g.md{
+        width: 80%;
+    }
+
+
+    h3{
+        font-size: 22px;
+        font-family: g.$noto-serif;
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}

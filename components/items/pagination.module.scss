@@ -1,0 +1,26 @@
+@use '../../styles/global/' as g;
+
+.numbers { //ul
+    display: flex;
+
+    li{
+        width: 2rem;
+        height: 2rem;
+        background: #fff;
+        border-radius: 50%;
+        margin-left: 1rem;
+
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+
+    a{
+        width: inherit;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #777;
+}
+}

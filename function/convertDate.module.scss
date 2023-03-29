@@ -1,0 +1,19 @@
+@use '../styles/global/' as g;
+
+.container{
+    display: flex;
+    align-items: center;
+
+    @include g.md{
+       width: fit-content;
+
+    }
+
+}
+.monthDate{
+    font-size: 1.25rem;
+    margin-left: 0.3rem;
+    padding-bottom: 1px;
+  
+}
+

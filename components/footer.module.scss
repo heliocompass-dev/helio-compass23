@@ -1,0 +1,74 @@
+@use '../styles/global/' as g;
+
+.container{
+    padding: 2.25rem 2.5% 15px 2.5%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: -4;
+
+
+    @include g.sm{
+        height: 140px;
+        padding-bottom: 10px;
+    }
+}
+
+.policy, .copyright{
+    display: flex;
+    flex-direction: column;
+
+    a {
+        font-size: 12px;
+        position: relative;
+    }
+    a::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -7px;
+        width: 35px;
+        height: 1px;
+        border-bottom: 1px dotted #1d1d1d;
+    }
+    &:nth-child(3) a::before{
+        right: 0;
+    }
+}
+
+.policy{
+    @include g.sm{
+        font-size: 11px;
+    }
+}
+
+.copyright{
+    text-align: right;
+}
+
+.pageTitle{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include g.sm{
+        align-self: flex-start;
+    }
+
+ h2{
+    text-align: center;
+    font-family: g.$noto-sans;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 0.8;
+
+    span{
+        font-size: 12px;
+        margin: 0 auto ;
+    }
+}
+
+
+}

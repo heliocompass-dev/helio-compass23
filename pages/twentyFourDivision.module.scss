@@ -1,0 +1,100 @@
+@use '../styles/global/' as g;
+
+.wrapper{
+    background-color: #fefefe;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.content{
+    margin: 100px 0 70px 0;
+    display: flex;
+    width: 100%;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include g.sm{
+        margin: 150px 0 0 0;
+        flex-direction: column;
+    }
+}
+
+
+.quarter{
+    position: relative;
+    min-height: 300px;
+    width: 22%;
+   
+
+    @include g.md{
+        width: 45%;
+        margin-bottom: 50px;
+    }
+    
+    @include g.sm{
+        margin-bottom: 0px;
+        width: 100%;
+    }
+
+    &:nth-child(2){
+        @include g.sm{
+            margin-bottom: 80px;
+        }
+    }
+    &:nth-child(4){
+        @include g.sm{
+            margin-top: -50px;
+            margin-bottom: 80px;
+        }
+    }
+
+
+    &:nth-child(1)::before, &:nth-child(1)::after, &:nth-child(3)::before, &:nth-child(3)::after{
+        display: block;
+        position: absolute;
+        width: 100%;
+    }
+    &:nth-child(1)::before, &:nth-child(3)::before{
+        font-weight: 500;
+        font-size: 17px;
+        top: -30px;
+
+        @include g.md{
+            top: -35px;
+        }
+        @include g.sm{
+            top: -40px;
+            left: 48px;
+        }
+    }
+    &:nth-child(1)::after,  &:nth-child(3)::after{
+        top: -25px;
+        left: 60px;
+        font-size: 14px;
+
+        @include g.md{
+            top: -31px;
+        }
+        @include g.sm{
+            top: -35px;
+            left: 105px;
+        }
+    }
+    &:nth-child(1)::before{
+        content: '上半期';
+    }
+    &:nth-child(3)::before{
+        content: '下半期';
+    }
+    &:nth-child(1)::after{
+        content: '(168日間)';
+    }
+    &:nth-child(3)::after{
+        content: '(179日間)';
+    }
+}
+
+
+

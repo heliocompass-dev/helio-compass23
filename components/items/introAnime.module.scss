@@ -1,0 +1,52 @@
+@use '../../styles/global/' as g;
+
+.container{
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+background: radial-gradient(circle, rgba(#f0f0f0,1) 0%, rgba(#ddd,1) 70%, rgba(#ddd,1) 100%);
+
+    .circle{
+        width: 40vw;
+        height: 40vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: rgba(250, 250,250,1);
+
+    }
+
+    p{
+        z-index: 2;
+    }
+
+    .jp{
+        writing-mode: vertical-rl;
+        font-family: g.$noto-serif;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+
+        span{
+            font-size: 1.75rem;
+            margin-top: 1rem;
+            letter-spacing: 3px;
+            font-weight: g.$medium;
+        }
+    }
+
+    .en{
+        margin-top: 5rem;
+        text-transform: uppercase;
+        font-weight: g.$light;
+    }
+}

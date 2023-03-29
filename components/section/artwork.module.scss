@@ -1,0 +1,204 @@
+@use '../../styles/global/' as g;
+
+$gap:  1.5rem;
+
+.container{
+    width: 100%;
+    margin-top: 7rem;
+    padding-left: 8vw;  
+}
+
+.intro{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 10vw;
+
+    @include g.md{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h2{
+        font-size: 3.25rem;
+        letter-spacing: -7px;
+        font-weight: g.$regular;
+
+
+        @include g.sm{
+            font-size: 2.5rem;
+            letter-spacing: -5px;
+        }
+        @include g.xs{
+            font-size: 2.25rem;
+        }
+
+        span{
+            font-size: 1.5rem;
+            letter-spacing: -2px;
+            @include g.sm{
+                letter-spacing: -1px;
+            }
+        }
+
+    }
+
+    p{
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        margin-left: 2rem;
+        flex: 1;
+
+        @include g.md{
+            margin-left: 0;
+        }
+    }
+}
+
+.content{
+    padding-top: $gap;
+    padding-right: 5vw;
+    padding-left: $gap;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $gap;
+
+    @include g.md{
+        grid-template-columns: 1fr; 
+    }
+
+
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        background: g.$black;
+        top: 0;
+        left: 0;
+    }
+
+    &::before{
+        width: 97.5%;
+        height: 1px;
+        
+        @include g.md{
+            width: 97.5%;
+        }
+    }
+    &::after{
+        width: 1px;
+        height: 18rem;
+    }
+}
+
+.smContentContainer{
+    display: grid;
+    row-gap: $gap;
+}
+
+
+.c{
+    display: flex;
+    padding-top: $gap;
+    padding-right: 5vw;
+    position: relative;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    @include g.md{
+        flex-direction: column;
+    }
+    @include g.sm{
+        padding-top: 1rem;
+        padding-left: 1rem;
+    }
+    
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        background: g.$black;
+        top: 0;
+        left: 0;
+    }
+
+    &::before{
+        width: 95%;
+        height: 1px;
+        
+        @include g.md{
+            width: 95%;
+        }
+    }
+    &::after{
+        width: 1px;
+        height: 18rem;
+    }
+
+    .smContentContainer{
+        width: calc(50% - ($gap));
+        
+
+        @include g.md{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+
+    .smContent, .lgContent{
+        position: relative;
+    }
+    
+    .smContent{
+        
+
+        @include g.sm{
+            height: 200px;
+        }
+      
+        img{
+            object-fit: contain;
+        }
+
+        &:nth-child(2){
+            @include g.md{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .smContent2{
+        margin-top: $gap;
+      
+    }
+    
+    
+    .lgContent{
+        width: calc(50% - ($gap / 2));
+        padding-left: $gap;
+        height: 1030px;
+
+        @include g.md{
+            width: 100%;
+            height: 1100px;
+            margin-top: 1rem;
+            padding-left: 0;
+        
+        }
+        @include g.sm{
+            margin-top: 2rem;
+            height: auto;
+        }
+
+     img{
+        object-fit: cover;
+
+        @include g.md{
+            object-fit: cover;
+        }
+     }
+    }
+}

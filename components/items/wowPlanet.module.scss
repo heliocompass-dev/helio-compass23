@@ -1,0 +1,167 @@
+@use '../../styles/global/' as g; 
+
+.container {
+  position: relative;
+  z-index: 1 !important;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff100;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.7s ease;
+    @include g.md {
+      display: none;
+      cursor: auto;
+    }
+  }
+
+  &::before {
+    //円
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    bottom: -5px;
+  }
+  &::after {
+    //縦線
+    width: 1px;
+    height: 25px;
+    bottom: -30px;
+    transform: scaleY(0);
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  &:hover::after {
+    transform: scaleY(1);
+  }
+  &:hover .monthHover {
+    transform: scale(1);
+    opacity: 1;
+  }
+  &:hover .planetCircle{
+    top: 20px;
+    width: 1px;
+    height: 20px;
+    @include g.md{
+      top: 30px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+
+// .planetIcon {
+//   position: relative;
+//   cursor: pointer;
+// }
+.planetCircle{
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  transition: .5s ease;
+  @include g.md{
+    pointer-events: none;
+  }
+}
+
+.title {
+  cursor: pointer;
+  h4 {
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+    font-family: var(--noto-serif);
+  }
+  .number,
+  .titleEn {
+    font-family: var(--noto-sans);
+  }
+  .number {
+    margin-right: 5px;
+  }
+  .titleEn {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+}
+
+.hover {
+  position: absolute;
+  top: 105px;
+  transform: translateX(-40%);
+
+  color: #1d1d1d;
+  display: flex;
+  padding: 15px;
+  min-width: 500px;
+  background: rgba(#fff, 0.95);
+
+  pointer-events: none;
+  z-index: 777;
+
+  opacity: 0;
+  transition: 1s ease;
+  transition-delay: 0.15s;
+
+  @include g.md {
+    display: none;
+  }
+}
+.container:hover .hover {
+  opacity: 1;
+}
+
+.hoverImg {
+ padding: 10%;
+ margin: 0 7% 0 5%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hoverText {
+  width: 70%;
+
+  h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    font-family: var(--noto-serif);
+  }
+
+  .number,
+  .titleEn {
+    font-family: var(--noto-sans);
+  }
+  .number {
+    margin-right: 5px;
+  }
+  .titleEn {
+    margin-left: 5px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+}

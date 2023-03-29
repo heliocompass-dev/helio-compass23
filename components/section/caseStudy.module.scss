@@ -1,0 +1,178 @@
+@use '../../styles/global/' as g;
+
+.container{
+    margin-top: 7rem;
+    margin-left: 10vw;
+}
+
+.intro{
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    @include g.sm{
+        flex-direction: column;
+        align-items: center;
+        margin-right: 10vw;
+    }
+
+
+
+    .title{
+        background: g.$keyColor;
+        filter: brightness(120%);
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -1rem;
+        z-index: 2;
+        box-shadow: 0 3px 6px -2px rgba(#fff, 0.3);
+
+        @include g.sm{
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 6px -2px rgba(#0b223c, 0.3);
+
+        }
+        
+        h2{
+            color: g.$white;
+            font-size: 1.75rem;
+            font-weight: g.$regular;
+            letter-spacing: 2px;
+            line-height: 1.1;
+
+        }
+    }
+
+    p{
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        margin-left: 0.5rem;
+        width: 70%;
+
+        @include g.md{
+            width: 60%;
+        }
+        @include g.sm{
+            width: auto;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    &::before{
+        content: 'scroll';
+        font-size: 0.85rem;
+        position: absolute;
+        right: calc(5vw + 4rem + 5px);
+        bottom: 0.25rem;
+        color: g.$accentColor;
+
+        @include g.md{
+            right: calc(5vw + 2.5rem + 5px);
+        }
+        @include g.sm{
+            display: none;
+        }
+    }
+     &::after{
+        content: '';
+        display: block;
+        width: 4rem;
+        height: 1px;
+        background: g.$accentColor;
+        position: absolute;
+        right: 5vw;
+        bottom: 0.5rem;
+
+        @include g.md{
+            width: 2.5rem;
+        }
+        @include g.sm{
+            display: none;
+        }
+    }
+}
+
+.slides{
+    cursor: pointer;
+
+    @include g.sm{
+        margin-top: 0.5rem;
+    }
+   
+}
+
+.links{
+    margin-top: 2rem;
+    display: flex;
+    
+    @include g.md{
+        flex-direction: column;
+    }
+
+    li{
+        margin-right: 4rem;
+        font-size: 0.9rem;
+        margin-left: 0.75rem;
+        position: relative;
+        transition: .3s ease-in;
+
+        @include g.md{
+            margin-top: 1rem;
+            margin-right: 0;
+        }
+
+        &::before, &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            background: g.$keyColor;
+        }
+        &::before{
+            width: 1px;
+            height: 100%;
+            top: 0%;
+            left: -0.75rem;
+            transition: .3s ease;
+            rotate: 180deg;
+        }
+        
+        &::after{
+            width: 0;
+            height: 1px;
+           top: calc(50% + 1px);
+            left: -0.75rem;
+            transition: .7s ease-in;
+        }
+
+        img{
+            margin-left: 0.5rem;
+            margin-bottom: -3px;
+            transition: 1s ease;
+        }
+
+        &:hover{
+
+            img{
+                rotate: 180deg;
+                scale: 1.2;
+            }
+
+            &::before{
+             height: 0;
+            };
+           &::after{
+            width: calc(100% - 0.5rem);
+           }
+        }
+    }
+}
+.onlySmInvisible{
+    @include g.sm{
+        display: none;
+    }
+}

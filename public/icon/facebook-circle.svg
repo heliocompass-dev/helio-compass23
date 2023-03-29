@@ -1,0 +1,7 @@
+<svg id="グループ_595" data-name="グループ 595" xmlns="http://www.w3.org/2000/svg" width="42" height="43" viewBox="0 0 42 43">
+  <g id="楕円形_87" data-name="楕円形 87" fill="#fff" stroke="rgba(255,255,255,0.5)" stroke-width="1">
+    <ellipse cx="21" cy="21.5" rx="21" ry="21.5" stroke="none"/>
+    <ellipse cx="21" cy="21.5" rx="20.5" ry="21" fill="none"/>
+  </g>
+  <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M9.85,9.965l.492-3.206H7.266V4.679A1.6,1.6,0,0,1,9.074,2.946h1.4V.217A17.056,17.056,0,0,0,7.989,0C5.456,0,3.8,1.536,3.8,4.316V6.759H.984V9.965H3.8v7.751H7.266V9.965Z" transform="translate(14.944 13.429)" fill="#275974"/>
+</svg>

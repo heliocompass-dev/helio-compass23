@@ -1,0 +1,208 @@
+@use '../../styles/global' as g;
+
+.container{
+    width: 100%;
+    margin-top: 5rem;
+    padding: 4rem 0 6rem;
+    background: url('../../public/home/connect-bg.jpg');
+   background-size: cover;
+   color: #fff;
+}
+
+.intro{
+    display: flex;
+    margin-right: 10vw;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include g.sm{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title{
+        h2{
+            margin-left: 10vw;
+            font-size: 3.25rem;
+            font-weight: g.$medium;
+            letter-spacing: -0.5px;
+
+            span{
+                font-size: 1.25rem;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        .line{
+            display: block;
+            width: calc(10vw + 14rem);
+            height: 1px;
+            background: #fff;
+            margin-top: -0.1rem;
+        }
+    }
+
+    .sns{
+        display: flex;
+        margin-bottom: -0.5rem;
+
+        @include g.sm{
+            margin-left: 8vw;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+    }
+        li{
+            margin-left: 0.5rem;
+        }
+
+}
+
+.bottomContainer{
+    display: flex;
+    margin-right: 10vw;
+    padding-top: 3rem;
+
+    @include g.md{
+        margin-right: 5vw;
+    }
+
+
+    .decoImg{
+        position: relative;
+        min-height: 270px;
+        height: 100%;
+        width: calc(33vw); 
+
+        @include g.md{
+            display: none;
+        }
+
+        img{
+            object-fit: cover;
+            border: 1px solid #fff;
+            border-left: none;
+        }
+    }
+    .toChildContainer{
+        margin-left: 4vw;
+        display: flex;
+        width: 45rem;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        @include g.sm{
+            flex-direction: column;
+        }
+
+
+        &::before{ //パートナーと問い合わせの境界の縦線
+            content: '';
+            width: 1px;
+            height: 85%;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+
+            @include g.md{
+                display: none;
+            }
+        }
+    }
+
+    .toChildBox{
+        width: calc(50% - 6rem);
+        height: 100%;
+        border-radius: 3px;
+
+        @include g.md{
+            width: calc(50% - 0.5rem);
+            padding: 2rem;
+            background: rgba(#000, 0.3);
+            border-radius: 5px;
+            min-height: 320px;
+        }
+        @include g.sm{
+            width: 100%;
+            min-height: none;
+
+            &:nth-child(2){
+                margin-top: 1rem;
+            }
+        }
+
+       h3{
+        font-size: 1.75rem;
+        font-weight: g.$regular;
+        position: relative;
+
+        @include g.md{
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        // &::after{ //英語のサブタイトル
+        //     font-size: 1rem;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 2.25rem;
+        //     text-transform: capitalize;
+        //     opacity: 0.75;
+        //     font-weight: g.$regular;
+        //     letter-spacing: 0.5px;
+        // }
+       }
+
+       .childBoxSubTitle{
+            font-size: 1rem;
+            text-transform: capitalize;
+            opacity: 0.75;
+            font-family: g.$noto-serif;
+            font-weight: g.$regular;
+            letter-spacing: 0.5px;
+       }
+
+      
+       .childBoxCap{
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+       }
+
+       a{
+        margin-top: 2rem;
+        @include g.md{
+            position: absolute; //キャプションの改行で高さの左右差がうまれmarginだとずれる
+            bottom: 3rem;
+        }
+        @include g.sm{
+            position: static;
+        }
+       }
+
+    }
+}
+
+.toPartner{
+    h3{
+        letter-spacing: -1px;
+
+        // &::after{
+        //     content: 'partner & shop';
+        // }
+    }
+}
+
+.toContact{
+    h3{
+        letter-spacing: -1px;
+
+        // &::after{
+        //     content: 'contact';
+        // }
+    }
+}

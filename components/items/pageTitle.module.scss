@@ -1,0 +1,83 @@
+@use '../../styles/global/' as g;
+
+
+ 
+ .container{
+    white-space: pre-line; //props内の改行
+    width: 100%;
+    padding: 0 12vw;
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include g.sm{
+        padding: 50px 15% 0px 17%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+ }
+
+.title{
+
+    h1{
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-family: g.$noto-sans;
+    }
+    span{
+        content: '';
+        display: block;
+        width: 35px;
+        height: 1px;
+        background-color: #1d1d1d;
+        margin-bottom: 7px;
+    }
+    h2{
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        font-family: g.$noto-sans;
+    }
+}
+
+.border{
+    width: 1px;
+    height: 120px;
+    background-color: #1d1d1d;
+    align-self: center;
+    margin: auto 30px;
+
+    @include g.md{
+        display: none;
+    }
+   
+}
+
+.desc{
+    width: 80%;
+    @include g.md{
+        width: 70%;
+    }
+
+    @include g.sm{
+        margin-top: 35px;
+        width: 100%;
+    }
+
+    h3{
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        font-family: g.$noto-sans;
+    }
+    p{
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}

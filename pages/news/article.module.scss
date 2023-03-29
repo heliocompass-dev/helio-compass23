@@ -1,0 +1,136 @@
+@use '../../styles/global/' as g;
+
+.container{
+    padding: 5rem 10vw 10rem;
+    min-height: 100vh;
+}
+
+.intro{
+    display: flex;
+
+    @include g.sm{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.overview{
+    margin-left: 5rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include g.sm{
+        margin-top: 2rem;
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    h2{
+        font-size: 2rem;
+        font-weight: g.$regular;
+        letter-spacing: -2px;
+        line-height: 1.4;
+        margin-left: -3px;
+        @include g.md{
+            font-size: 1.75rem;
+        }
+     
+    }
+
+    ul{
+        @include g.sm{
+            margin-top: 3rem;
+        }
+        li{
+            margin-bottom: 0.75rem;
+            display: flex;
+
+            @include g.md{
+                margin-bottom: 0.5rem;
+            }
+
+
+            .infoTitle{
+                display: inline-block;
+                width: 9.5rem;
+            }
+        
+            .arrowIcon{
+                margin-left: 0.5rem;
+            }
+        }
+   
+        .day, .time{
+            margin-left: 0.5rem;
+            font-size: 1.1rem;
+            position: relative;    
+            top: -1px;      
+        }
+    }
+}
+
+
+
+.content, .links{
+    margin-left: calc(300px + 5rem);
+
+    @include g.md{
+        margin-left: 10%;
+        width: 80%;
+    }
+    @include g.sm{
+        margin-left: 7.5%;
+        width: 85%;
+    }
+}
+
+.content{
+    margin-top: 3rem;
+    line-height: 2.5;
+
+    @include g.md{
+        margin-top: 10vw;
+    }
+
+    @include g.sm{
+        margin-top: 5rem;
+    }
+}
+
+.links{
+    margin-top: 5rem;
+
+    @include g.md{
+        margin-top: 10vw;
+    }
+
+    @include g.sm{
+        margin-top: 5rem;
+    }
+
+
+    @include g.sm{
+        display: flex;
+        flex-direction: column-reverse;
+  
+    }
+
+    a{
+        margin-right: 2rem;
+        font-size: 0.95rem;
+
+        @include g.sm{
+            &:first-child{ //ホームへ戻る
+                margin-top: 2rem;
+            }
+        }
+
+        img{
+            margin-left: 3px;
+            margin-bottom: -2px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use '../../styles/global/' as g; 
+
+.container{
+    width: 45%;
+    margin-right: calc(5% - 5px);
+    margin-bottom: 50px;
+
+    @include g.md{
+        margin-right: 0;
+    }
+    @include g.sm{
+        width: 100%;
+        
+    }
+}
+
+.img{
+    height: 90px;
+    width: 90px;
+    position: relative;
+}
+
+.text{
+    margin-top: 15px;
+
+    h4{
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0;
+        font-family: var(--noto-serif);
+    }
+
+    .number, .titleEn{
+        font-family: var(--noto-sans);
+    }
+    .number{
+        margin-right: 5px;
+    }
+    .titleEn{
+        margin-left: 5px;
+    }
+    p{
+        font-size: 13px;
+        line-height: 2;
+    }
+}

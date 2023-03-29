@@ -1,0 +1,31 @@
+.btn{
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    width: fit-content;
+    padding: 0 1rem;
+    transition: .5s ease-out;
+
+    &:hover{
+        border-radius: 10px;
+        img{
+            scale: 1.15;
+            translate: 2px 0;
+            rotate: -180deg;
+        }
+    }
+    
+    span{
+        width: fit-content;
+        border: none;
+        margin-right: 3px;
+        font-size: 0.9rem;
+        position: relative;
+    }
+
+    img{
+        margin-top: 2px;
+        transition: .5s ease-out;
+    }
+
+}
