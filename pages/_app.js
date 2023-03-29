@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setIntroAnime(false)
-    }, 100);
+    }, 3500);
   }, [])
   
 
