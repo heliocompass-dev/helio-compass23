@@ -38,7 +38,7 @@ export default function Home({note, news, IG}) {
   return (
     <div className={styles.container}>
          <Head>
-           <title>地球暦23</title>
+           <title>地球暦 HELIO COMPASS Official Website</title>
         </Head>
 
 
