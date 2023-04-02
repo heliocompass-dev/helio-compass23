@@ -5,7 +5,6 @@ import {motion as m} from 'framer-motion'
 import { useState, useEffect, useRef } from 'react';
 import ImgExpandPopup from '../items/ImgExpandPopup';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import sliderOptions from '../../data/sliderOptions';
 
 export default function CaseStudy() {
 
@@ -45,8 +44,6 @@ export default function CaseStudy() {
         }
       };
         
-
-
   
     const [popupImage, setPopupImage] = useState(null);
       const openPopup = (imgSrc) => {
@@ -82,7 +79,7 @@ export default function CaseStudy() {
             </SplideTrack>
 
               {popupImage && (
-            <ImgExpandPopup slideImgSize={imgSize} imgSrc={popupImage} onClose={closePopup} />
+            <ImgExpandPopup imgSrc={popupImage} widthRatio={0.71} onClose={closePopup} />
             )}
 
             </Splide>

@@ -27,9 +27,14 @@
 .title{
 
     h2{
-        font-size: 1.7rem;
-        font-weight: g.$medium;
+        font-size: 2rem;
+        font-weight: g.$regular;
         letter-spacing: -1px;
+
+        
+        span{
+            font-size: 1.5rem;
+        }
     }
 }
 

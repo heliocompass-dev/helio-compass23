@@ -2,11 +2,12 @@ import styles from './imgExpandPopup.module.scss'
 import {motion as m, AnimatePresence} from 'framer-motion'
 import Image from 'next/image';
 
-export default function ImgExpandPopup({imgSrc, onClose, }) {
+export default function ImgExpandPopup({imgSrc, onClose, widthRatio}) {
     
+    //widthRatioは高さに対する横幅の比率
     //高さ 90vhにして、縦横比を
-    const height = window.innerHeight * 0.9
-    const verticalImgWidth = height * 0.71
+    const height = window.innerHeight * 0.95
+    const verticalImgWidth = height * widthRatio
 
     return (
         <AnimatePresence>

@@ -8,6 +8,12 @@ $gap:  1.5rem;
     padding-left: 8vw;  
 }
 
+.smContentContainer, .lgContent{
+    img{
+        cursor: pointer;
+    }
+}
+
 .intro{
     display: flex;
     align-items: flex-end;

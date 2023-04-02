@@ -31,7 +31,7 @@ export default function News({news,}) {
         <m.div layout className={styles.wrapper}>
 
         <m.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} className={styles.title}>
-            <m.h2 variants={item}>イベント開催情報</m.h2>
+            <m.h2 variants={item}><span>イベント</span>開催情報</m.h2>
             {/* <m.h2 initial={{opacity: 0, skewX: 15, rotateX: 15}} whileInView={{opacity: 1, skewX:0, rotateX: 0}} transition={{delay: 0.5, duration: 0.5}}>これからのイベント</m.h2> */}
         </m.div>
         <m.div  variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} className={styles.contentContainer}>
